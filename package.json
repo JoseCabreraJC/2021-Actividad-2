@@ -1,0 +1,11 @@
+{
+  "name": "g5comerce",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Grupo 5 - DACS - UTN FRRe 2021",
+  "license": "ISC"
+}
