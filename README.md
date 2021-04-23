@@ -17,7 +17,7 @@ Clone this repo
 2. Place urself in
 
 ```console
-sails/actividad2
+2021-Actividad-2/sails/actividad2
 ```
 
 3. Run
@@ -36,4 +36,55 @@ sails lift
 
 ```console
 localhost:1337
+```
+
+## Express project
+
+1. Switch to grupo2/frameworks branch
+
+2. Place urself in
+
+```console
+2021-Actividad-2/express
+```
+
+3. Run
+
+```console
+npm install
+```
+
+4. Now you have to configure your db in
+
+```console
+2021-Actividad-2/express/db.js
+```
+
+Change the sequelize constructor parameters
+
+```console
+
+const sequelize = new Sequelize('dacs', 'root', 'rootroot', {
+    host: 'localhost',
+    dialect: 'mysql',
+    dialectOptions: { decimalNumbers: true },
+    define: {
+        timestamps: false,
+    },
+});
+
+```
+
+5. Create a MySql schema
+
+6 . Run in your console
+
+```console
+npm start
+```
+
+7. Now you can just open it in your browser
+
+```console
+localhost:5000
 ```
