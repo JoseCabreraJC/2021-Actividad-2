@@ -12,4 +12,15 @@ app.get("/foods", async (request, response) => {
   }
 });
 
+app.post("/food", async (request, response) => {
+  const food = new Food(request.body);
+
+  try {
+    await food.save();
+    response.send(food);
+  } catch (error) {
+    response.status(500).send(error);
+  }
+});
+
 module.exports = app;
