@@ -33,4 +33,15 @@ app.patch("/food/:id", async (request, response) => {
   }
 });
 
+app.delete("/food/:id", async (request, response) => {
+  try {
+    const food = await Food.findByIdAndDelete(request.params.id);
+
+    if (!food) response.status(404).send("La comida buscada no existe");
+    response.status(200).send();
+  } catch (error) {
+    response.status(500).send(error);
+  }
+});
+
 module.exports = app;
