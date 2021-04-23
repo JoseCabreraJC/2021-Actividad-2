@@ -1,5 +1,5 @@
 {
-  "name": "Actividad Node, Mongo",
+  "name": "act2",
   "version": "1.0.0",
   "description": "Actividad 2, Node, Express, y mongoose ",
   "main": "server.js",
@@ -9,7 +9,7 @@
   "author": "Grupo 5 - DACS - UTN FRRe 2021",
   "license": "ISC",
   "dependencies": {
-   "cors": "^2.8.5",
+    "cors": "^2.8.5",
     "express": "^4.17.1",
     "mysql2": "^2.2.5",
     "sequelize": "^6.6.2"

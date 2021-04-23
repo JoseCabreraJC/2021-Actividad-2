@@ -1,7 +1,44 @@
-const buenosDias = (username) => {
-  console.log(`Buenos dias ${username}`)
-}
+const express = require("express");
+const mongoose = require("mongoose");
+const cors = require("cors");
 
-export default {
-  buenosDias,
-}
+const app = express();
+
+var corsOptions = {
+  origin: "http://localhost:8081",
+};
+
+app.use(cors(corsOptions));
+
+// parse requests of content-type - application/json
+app.use(express.json());
+
+// parse requests of content-type - application/x-www-form-urlencoded
+app.use(express.urlencoded({ extended: true }));
+
+mongoose
+  .connect(
+    "mongodb+srv://usuario-jose:cacacaca@testcluster.uxihz.mongodb.net/sample_airbnb?retryWrites=true&w=majority",
+    {
+      useNewUrlParser: true,
+      useFindAndModify: false,
+      useUnifiedTopology: true,
+    }
+  )
+  .then(() => {
+    console.log("Connected to the database!");
+  })
+  .catch(err => {
+    console.log("Cannot connect to the database!", err);
+    process.exit();
+  });
+// simple route
+app.get("/", (req, res) => {
+  res.json({ message: "Arrancamos desde lo mas simple." });
+});
+
+// set port, listen for requests
+const PORT = process.env.PORT || 8080;
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}.`);
+});
