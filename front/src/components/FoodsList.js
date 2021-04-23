@@ -13,7 +13,6 @@ const FoodsList = () => {
 
 
     const retrieveFoods = () => {
-        console.log("entre acá");
         FoodDataService.getAll()
             .then(response => {
                 setFoods(response.data);

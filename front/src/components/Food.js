@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import FoodDataService from "../services/FoodService";
 
 const Food = props => {
-  console.log("las props que recibí:   ", props)
   const initialFoodState = {
     id: null,
     nombre: "",
@@ -12,7 +11,6 @@ const Food = props => {
   const [message, setMessage] = useState("");
 
   const getFood = id => {
-    console.log("Entré acá getFood", id)
     FoodDataService.get(id)
       .then(response => {
         setCurrentFood(response.data);

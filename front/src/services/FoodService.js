@@ -1,7 +1,7 @@
 import axios from "../axiosConfig";
 
 const getAll = () => {
-  return axios.get("/foods");
+  return axios.get("/food");
 };
 
 const get = id => {
