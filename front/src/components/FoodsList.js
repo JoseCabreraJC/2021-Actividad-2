@@ -69,12 +69,17 @@ const FoodsList = () => {
                 </ul>
 
                 {(foods.length > 0) ?
+                    <>
                     <button
                         className="m-3 btn btn-sm btn-danger"
                         onClick={removeAllFoods}
                     >
                         Eliminar todos
                     </button>
+                        <Link to={"/add"} className="m-3 btn btn-sm btn-primary">
+                            Añadir
+                </Link>
+                    </>
                     :
                     <Link to={"/add"} className="m-3 btn btn-sm btn-primary">
                         Añadir
