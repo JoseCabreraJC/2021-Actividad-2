@@ -23,4 +23,14 @@ app.post("/food", async (request, response) => {
   }
 });
 
+app.patch("/food/:id", async (request, response) => {
+  try {
+    const food = await Food.findByIdAndUpdate(request.params.id, request.body);
+    await food.save();
+    response.send(food);
+  } catch (error) {
+    response.status(500).send(error);
+  }
+});
+
 module.exports = app;
