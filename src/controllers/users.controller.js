@@ -1,7 +1,7 @@
 //import sequelize
 var Sequelize = require('sequelize');
 const route = require('../routes/users.routes.js');
-// import model
+// import models
 var Users = require('../models/users.js');
 var Teams =require('../models/teams.js');
 const usersController={};
@@ -14,7 +14,6 @@ usersController.list = (req, res) => {
     Users.findAll({ attributes: ['id','firstname', 'lastname', 'email', 'pass','teamId'] })
     .then(users => res.json(users))
     .catch(error =>  res.status(412).json({msg: error.message}));
-  
 }
 
 usersController.create = (req, res) => {
@@ -57,30 +56,6 @@ usersController.delete = (req, res) => {
     .catch(error => res.status(412).json({msg: error.message}));
 }
 
-// usersController.userTeam= (req, res) => {
-//     let idUser=parseInt(req.params.id);
-//     Users.findAll(  {  
-//                         where: ["id = ${idUser}"],
-//                         include: [{
-//                                 model: Teams,
-//                                 where: ["id = users.teamsId"],
-//                                 required: true
-//                             }]
-//                     }).then(users => res.json(users))
-//                         .catch(error => res.status(412).json({msg: error.message}));
-// }
-// usersController.userTeam= (req, res) => {
-//     let idUser=parseInt(req.params.id);
-//     Users.findAll({
-//         where: ["id = ${idUser}"],
-//         include: [
-//           {
-//             model: Teams,
-//           },
-//         ]
-//       }).then(users => res.json(users))
-//       .catch(error => res.status(412).json({msg: error.message}));
-// }
 usersController.usersTeams= (req, res) => {
     let idUser=parseInt(req.params.id);
     Users.findAll({
