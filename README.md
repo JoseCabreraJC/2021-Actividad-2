@@ -59,8 +59,8 @@ app.get('\', (req, res) => {
 })
 ```
 Ahora, ejecutamos en nuestra consola **node index.js** y en un navegador
-escribiremos la ruta **http://localhost:3000** podremos ver nuestro
-mensaje de **Hello world! **entonces nuestro servidor esta funcionando
+escribiremos la ruta http://localhost:3000 podremos ver nuestro
+mensaje de *Hello world!* entonces nuestro servidor esta funcionando
 correctamente.
 ---
 ### Agregamos nodemon a nuestro proyecto
@@ -104,7 +104,7 @@ Sequelize
 ### Creación del CRUD
 
 Vamos crear nuestros **métodos, GET, POST, PUT, DELETE** en nuestro
-archivo **index.js según corresponda
+archivo index.js según corresponda
 
 Mediante una aplicación o su propio código **front-end** podemos
 consumir este servicio REST para nuestro ejemplo usaremos POSTMAN.
