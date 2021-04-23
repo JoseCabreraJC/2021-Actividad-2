@@ -109,4 +109,4 @@ archivo index.js según corresponda
 Mediante una aplicación o su propio código **front-end** podemos
 consumir este servicio REST para nuestro ejemplo usaremos POSTMAN.
 ---
-**Made with ❤️ by: conradoDantiochia**
+**Made with ❤️ by: grupo10**
