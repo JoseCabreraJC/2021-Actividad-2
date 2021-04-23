@@ -36,7 +36,7 @@ const Food = props => {
     FoodDataService.update(currentFood._id, currentFood)
       .then(response => {
         console.log(response.data);
-        setMessage("The food was updated successfully!");
+        setMessage("La comida se actualizó correctamente!");
       })
       .catch(e => {
         console.log(e);
