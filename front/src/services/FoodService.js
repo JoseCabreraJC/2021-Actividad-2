@@ -1,7 +1,7 @@
 import axios from "../axiosConfig";
 
 const getAll = () => {
-  return axios.get("/food");
+  return axios.get("/foods");
 };
 
 const get = id => {
@@ -13,7 +13,7 @@ const create = data => {
 };
 
 const update = (id, data) => {
-  return axios.put(`/food/${id}`, data);
+  return axios.patch(`/food/${id}`, data);
 };
 
 const remove = id => {

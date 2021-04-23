@@ -2,7 +2,7 @@ const express = require("express");
 const Food = require("../models/foodModel");
 const app = express();
 
-app.get("/food", async (request, response) => {
+app.get("/foods", async (request, response) => {
   const foods = await Food.find({});
 
   try {
@@ -34,7 +34,7 @@ app.post("/food", async (request, response) => {
   }
 });
 
-app.put("/food/:id", async (request, response) => {
+app.patch("/food/:id", async (request, response) => {
   try {
     const food = await Food.findByIdAndUpdate(request.params.id, request.body);
     await food.save();

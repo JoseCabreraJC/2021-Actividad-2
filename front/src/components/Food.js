@@ -74,7 +74,7 @@ const Food = props => {
             <div className="form-group">
               <label htmlFor="calorias">Calorias</label>
               <input
-                type="text"
+                type="number"
                 className="form-control"
                 id="calorias"
                 name="calorias"
