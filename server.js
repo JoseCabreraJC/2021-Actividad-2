@@ -2,11 +2,11 @@ const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
 
+const foodRouter = require("./app/routes/foodRoutes.js");
+
 const app = express();
 
 const dbConfig = require("./app/config/db.config.js");
-
-console.log(dbConfig.url);
 
 var corsOptions = {
   origin: "http://localhost:8081",
@@ -37,6 +37,8 @@ mongoose
 app.get("/", (req, res) => {
   res.json({ message: "Arrancamos desde lo mas simple." });
 });
+
+app.use(foodRouter);
 
 // set port, listen for requests
 const PORT = process.env.PORT || 8080;
