@@ -4,6 +4,10 @@ const cors = require("cors");
 
 const app = express();
 
+const dbConfig = require("./app/config/db.config.js");
+
+console.log(dbConfig.url);
+
 var corsOptions = {
   origin: "http://localhost:8081",
 };
@@ -17,14 +21,11 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 mongoose
-  .connect(
-    "mongodb+srv://usuario-jose:cacacaca@testcluster.uxihz.mongodb.net/sample_airbnb?retryWrites=true&w=majority",
-    {
-      useNewUrlParser: true,
-      useFindAndModify: false,
-      useUnifiedTopology: true,
-    }
-  )
+  .connect(dbConfig.url, {
+    useNewUrlParser: true,
+    useFindAndModify: false,
+    useUnifiedTopology: true,
+  })
   .then(() => {
     console.log("Connected to the database!");
   })
