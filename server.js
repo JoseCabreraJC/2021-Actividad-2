@@ -3,6 +3,7 @@ const mongoose = require("mongoose");
 const cors = require("cors");
 
 const foodRouter = require("./app/routes/foodRoutes.js");
+const customerRouter = require("./app/routes/customerRoutes.js");
 
 const app = express();
 
@@ -39,6 +40,7 @@ app.get("/", (req, res) => {
 });
 
 app.use(foodRouter);
+app.use(customerRouter);
 
 // set port, listen for requests
 const PORT = process.env.PORT || 8080;
