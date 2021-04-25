@@ -4,6 +4,7 @@ const cors = require("cors");
 
 const foodRouter = require("./app/routes/foodRoutes.js");
 const customerRouter = require("./app/routes/customerRoutes.js");
+const ingredientRouter = require("./app/routes/ingredientRoutes.js");
 
 const app = express();
 
@@ -41,6 +42,7 @@ app.get("/", (req, res) => {
 
 app.use(foodRouter);
 app.use(customerRouter);
+app.use(ingredientRouter);
 
 // set port, listen for requests
 const PORT = process.env.PORT || 8080;
