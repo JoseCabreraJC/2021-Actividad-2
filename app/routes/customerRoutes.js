@@ -26,15 +26,15 @@ app.get("/customer/:id", async (request, response) => {
 
 app.post("/customer/new", async (request, response) => {
   const customer = new Customer({
-    _id = new mongoose.Types.ObjectId(),
-    nombre = request.body.nombre,
-    apellido = request.body.apellido,
-    edad = request.body.edad,
-    clienteFrecuente = request.body.clienteFrencuente,
-    myFavouriteFood = new Food({
-      nombre = request.body.myFavouriteFood.nombre,
-      calorias = request.body.myFavouriteFood.calorias
-    })
+    _id: new mongoose.Types.ObjectId(),
+    nombre: request.body.nombre,
+    apellido: request.body.apellido,
+    edad: request.body.edad,
+    clienteFrecuente: request.body.clienteFrencuente,
+    myFavouriteFood: new Food({
+      nombre: request.body.myFavouriteFood.nombre,
+      calorias: request.body.myFavouriteFood.calorias,
+    }),
   });
   try {
     await customer.save();
@@ -46,7 +46,10 @@ app.post("/customer/new", async (request, response) => {
 
 app.put("/customer/:id", async (request, response) => {
   try {
-    const customer = await Customer.findByIdAndUpdate(request.params.id, request.body);
+    const customer = await Customer.findByIdAndUpdate(
+      request.params.id,
+      request.body
+    );
     await customer.save();
     response.send(customer);
   } catch (error) {
@@ -70,7 +73,9 @@ app.delete("/customer", async (request, response) => {
     const customer = await Customer.deleteMany({});
 
     if (!customer) response.status(404).send("No hay ningún cliente por acá");
-    response.status(200).send(`Se han borrado ${customer.deletedCount} clientes`);
+    response
+      .status(200)
+      .send(`Se han borrado ${customer.deletedCount} clientes`);
   } catch (error) {
     response.status(500).send(error);
   }
