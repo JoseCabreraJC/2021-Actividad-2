@@ -11,7 +11,7 @@ const app = express();
 const dbConfig = require("./app/config/db.config.js");
 
 var corsOptions = {
-  origin: "http://localhost:3000",
+  origin: "https://mongo-server-cli-se-actv2.herokuapp.com/",
 };
 
 app.use(cors(corsOptions));
